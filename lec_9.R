@@ -1,0 +1,30 @@
+library(dplyr)
+library(gapminder)
+
+#use of summary function
+head(gapminder)
+
+gapminder %>%
+  summarise(minimum=min(pop),
+            average=mean(pop),
+            maximum=max(pop),
+            total=n())
+
+## use of group_by function
+gapminder %>% 
+  group_by(continent) %>%
+  summarise(minimum=min(pop),
+            average=mean(pop),
+            maximum=max(pop),
+            total=n())
+
+gapminder %>% 
+  group_by(continent,country) %>%
+  summarise(minimum=min(pop),
+            average=mean(pop),
+            maximum=max(pop),
+            total=n())-> summary_data
+
+print(summary_data, n = Inf)
+
+
