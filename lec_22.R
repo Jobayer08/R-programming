@@ -1,0 +1,9 @@
+#make a function for multiplication table
+
+mul=function(inp){
+  for(index in 1:10){
+    print(c(inp,'*',index,"=",inp*index))
+  }
+}
+
+mul(5)
